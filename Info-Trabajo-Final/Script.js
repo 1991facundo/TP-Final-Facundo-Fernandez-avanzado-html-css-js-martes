@@ -11,7 +11,7 @@ document.addEventListener('click', (e) => {
 
     const target = e.target
 
-    if (target.matches('#play')) {
+    if (target.matches('#play')|| target.matches('#play img')) {
         video.play()
 
         const duration = video.duration / 60
