@@ -52,3 +52,54 @@ document.addEventListener('click', (e) => {
 
 })
 
+// DRAG & DROP
+
+// Imagenes 
+
+let imagenIzquierda= document.querySelector("#img1")
+let imagenCentro = document.querySelector("#img2")
+let imagenDerecha = document.querySelector("#img3")
+
+// Destinos
+
+let destinoIzquierda= docuemnt.querySelector("#destino1")
+let destinoCentro = docuemnt.querySelector("#destino2")
+let destinoDerecha = docuemnt.querySelector("#destino3")
+
+// Traslados
+
+imagenIzquierda.addEventListener('dragstart', inicioTraslado1)
+imagenCentro.addEventListener('dragstart', inicioTraslado2)
+imagenDerecha.addEventListener('dragstart', inicioTraslado3)
+
+function inicioTraslado1 (evento){
+    evento.dataTrasnfer.setData('Text', "./assets/imagenes/Rompe1.png")
+}
+
+function inicioTraslado2(evento) {
+    evento.dataTrasnfer.setData('Text', "./assets/imagenes/Rompe2.png")
+}
+
+function inicioTraslado3(evento) {
+    evento.dataTrasnfer.setData('Text', "./assets/imagenes/Rompe3.png")
+}
+
+function finalTraslado(evento){
+
+    let imagen = evento.target;
+    imagen.style.visibility="hidden"
+}
+
+// DESTINO FINALES
+
+destinoIzquierda.addEventListener('dragover', prevenirDefaultIzq)
+destinoIzquierda.addEventListener('drop', soltarElementoIzq)
+
+function soltarElementoIzq (evento) {
+    let solElIzq = evento.dataTransfer.getData('Text');
+    destinoIzquierda.innerHtml = `img id="img1" src="${solElIzq}"/>`
+}
+
+function prevenirDefaultIzq(evento){
+    evento.preventDefault()
+}

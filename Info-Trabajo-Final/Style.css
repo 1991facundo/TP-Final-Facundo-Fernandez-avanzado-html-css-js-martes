@@ -332,6 +332,7 @@ footer h3 {
 #mainGames>div img {
     height: 95%;
     width: 100%;
+    border: 2px solid grey;
 
 }
 
