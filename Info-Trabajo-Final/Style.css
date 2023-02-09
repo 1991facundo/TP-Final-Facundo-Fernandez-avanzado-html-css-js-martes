@@ -126,6 +126,46 @@ nav button a {
     color: black;
 }
 
+.caida1 {
+    animation-name: caida1;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in;
+
+}
+
+.caida2 {
+    opacity: 0;
+    animation-name: caida2;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes caida1 {
+    from {
+        opacity: 0;
+        transform: translate(0, -10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes caida2 {
+    from {
+        opacity: 0;
+        transform: translate(0, -10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
 /* -----------Div Header ----------------- */
 
 header>div {
