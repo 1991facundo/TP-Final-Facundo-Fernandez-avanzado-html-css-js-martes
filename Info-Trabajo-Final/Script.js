@@ -56,15 +56,15 @@ document.addEventListener('click', (e) => {
 
 // Imagenes 
 
-let imagenIzquierda= document.querySelector("#img1")
-let imagenCentro = document.querySelector("#img2")
-let imagenDerecha = document.querySelector("#img3")
+let imagenIzquierda= document.querySelector('#img1')
+let imagenCentro = document.querySelector('#img2')
+let imagenDerecha = document.querySelector('#img3')
 
 // Destinos
 
-let destinoIzquierda= docuemnt.querySelector("#destino1")
-let destinoCentro = docuemnt.querySelector("#destino2")
-let destinoDerecha = docuemnt.querySelector("#destino3")
+let destinoIzquierda= docuemnt.querySelector('#destino1')
+let destinoCentro = docuemnt.querySelector('#destino2')
+let destinoDerecha = docuemnt.querySelector('#destino3')
 
 // Traslados
 
@@ -72,21 +72,21 @@ imagenIzquierda.addEventListener('dragstart', inicioTraslado1)
 imagenCentro.addEventListener('dragstart', inicioTraslado2)
 imagenDerecha.addEventListener('dragstart', inicioTraslado3)
 
-function inicioTraslado1 (evento){
-    evento.dataTrasnfer.setData('Text', "./assets/imagenes/Rompe1.png")
+function inicioTraslado1 (event){
+    event.dataTransfer.setData('Text', "./assets/imagenes/Rompe1.png")
 }
 
-function inicioTraslado2(evento) {
-    evento.dataTrasnfer.setData('Text', "./assets/imagenes/Rompe2.png")
+function inicioTraslado2(event) {
+    event.dataTransfer.setData('Text', "./assets/imagenes/Rompe2.png")
 }
 
-function inicioTraslado3(evento) {
-    evento.dataTrasnfer.setData('Text', "./assets/imagenes/Rompe3.png")
+function inicioTraslado3(event) {
+    event.dataTransfer.setData('Text', "./assets/imagenes/Rompe3.png")
 }
 
-function finalTraslado(evento){
+function finalTraslado(event){
 
-    let imagen = evento.target;
+    let imagen = event.target;
     imagen.style.visibility="hidden"
 }
 
@@ -95,11 +95,11 @@ function finalTraslado(evento){
 destinoIzquierda.addEventListener('dragover', prevenirDefaultIzq)
 destinoIzquierda.addEventListener('drop', soltarElementoIzq)
 
-function soltarElementoIzq (evento) {
-    let solElIzq = evento.dataTransfer.getData('Text');
+function soltarElementoIzq (event) {
+    let solElIzq = event.dataTransfer.getData('Text');
     destinoIzquierda.innerHtml = `img id="img1" src="${solElIzq}"/>`
 }
 
-function prevenirDefaultIzq(evento){
-    evento.preventDefault()
+function prevenirDefaultIzq(event){
+    event.preventDefault()
 }
